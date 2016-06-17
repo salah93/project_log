@@ -9,6 +9,5 @@ def pr_logger(text):
 
 
 if __name__ == "__main__":
-    log = "logger.md"
     lines = sys.argv[1]
     print(pr_logger(lines))
