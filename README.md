@@ -5,3 +5,10 @@ when working on a project it is useful to write down your thought process, this 
 ```
 python pr_logger.py "my critical update" >> log.md
 ```
+
+### adding the script to PATH
+```
+chmod 700 pr_logger.py
+ln pr_logger.py /usr/local/bin/log
+log "updated template"
+```
