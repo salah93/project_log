@@ -5,7 +5,7 @@ from datetime import datetime
 
 def pr_logger(text):
     timestamp = datetime.now()
-    html = """<h2>{0}</h2><code>{1}</code>""".format(timestamp, text)
+    html = """<h2>{0}</h2><p>{1}</p>""".format(timestamp, text)
     return html + '\n\n'
 
 
