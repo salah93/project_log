@@ -18,10 +18,10 @@ if __name__ == "__main__":
     parser.add_argument('content', metavar='CONTENT')
     parser.add_argument(
         '-t', metavar='HEAD_TAG', nargs='?',
-        choices=['h1', 'h2', 'h3', 'h4'],
+        default='h4', choices=['h1', 'h2', 'h3', 'h4'],
         help='the header tag used')
     parser.add_argument(
         '-b', metavar='BODY_TAG', nargs='?',
-        help='the tag of the content used')
+        default='p', help='the tag of the content used')
     args = parser.parse_args()
     print(pr_logger(args.content, args.t, args.b))
