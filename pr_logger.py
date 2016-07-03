@@ -3,13 +3,13 @@ from argparse import ArgumentParser
 from datetime import datetime
 
 
-def pr_logger(text, htag='h4', btag='p'):
-    return make_template(datetime.now(), text, htag, btag)
+def pr_logger(text, htag=4):
+    return make_template(datetime.now(), text, htag)
 
 
-def make_template(header, body, htag='h1', btag='p'):
-    return "<{htag}>{header}</{htag}><{btag}>{body}</{btag}>\n\n".format(
-                header=header, body=body, htag=htag, btag=btag)
+def make_template(header, body, htag=1):
+    return ("#" * int(htag) + " {header}\n{body}\n\n").format(
+                header=header, body=body)
 
 
 if __name__ == "__main__":
@@ -18,10 +18,7 @@ if __name__ == "__main__":
     parser.add_argument('content', metavar='CONTENT')
     parser.add_argument(
         '-t', metavar='HEAD_TAG', nargs='?',
-        default='h4', choices=['h1', 'h2', 'h3', 'h4'],
+        default=4, choices=[1, 2, 3, 4], type=int,
         help='the header tag used')
-    parser.add_argument(
-        '-b', metavar='BODY_TAG', nargs='?',
-        default='p', help='the tag of the content used')
     args = parser.parse_args()
-    print(pr_logger(args.content, args.t, args.b))
+    print(pr_logger(args.content, args.t))
