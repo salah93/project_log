@@ -12,3 +12,7 @@ chmod 700 pr_logger.py
 ln pr_logger.py /usr/local/bin/log
 log "updated template"
 ```
+```
+#### 2016-07-02 22:40:36.713159
+updated template
+```
